@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Minnesota Children's Zone</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700Poppins:wght@300;400;500;600&display=swap
+
+<style>
+
+:root{
+--purple:#5A189A;
+--gold:#D4A017;
+--white:#FFFFFF;
+--light:#F7F7FB;
+--dark:#222;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+color:var(--dark);
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+font-family:'Montserrat',sans-serif;
+color:var(--purple);
+}
+
+.logo span{
+color:var(--gold);
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+font-weight:600;
+color:var(--purple);
+}
+
+.hero{
+background:linear-gradient(rgba(90,24,154,.88),rgba(90,24,154,.88)),
+url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+min-height:90vh;
+display:flex;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:3.5rem;
+margin-bottom:20px;
+font-family:'Montserrat';
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:8px;
+text-decoration:none;
+font-weight:700;
+border:none;
+cursor:pointer;
+}
+
+.btn-primary{
+background:var(--gold);
+color:white;
+}
+
+.btn-secondary{
+background:white;
+color:var(--purple);
+}
+
+section{
+padding:80px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:2.5rem;
+color:var(--purple);
+font-family:'Montserrat';
+margin-bottom:40px;
+}
+
+.about{
+background:var(--light);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+color:var(--purple);
+margin-bottom:15px;
+}
+
+.impact{
+background:var(--purple);
+color:white;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.stat h2{
+font-size:48px;
+color:var(--gold);
+}
+
+.form-box{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+max-width:800px;
+margin:auto;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.donation-levels{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:20px;
+}
+
+.amount-btn{
+padding:10px 20px;
+border:2px solid var(--purple);
+border-radius:8px;
+background:white;
+cursor:pointer;
+font-weight:600;
+}
+
+.share-container{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+}
+
+.share-btn{
+padding:16px;
+text-decoration:none;
+color:white;
+font-weight:700;
+border-radius:8px;
+min-width:220px;
+text-align:center;
+}
+
+.facebook{background:#5A189A;}
+.linkedin{background:#7142b8;}
+.twitter{background:#8660ce;}
+.email{background:#9d7ce0;}
+
+footer{
+background:var(--purple);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.70);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+padding:40px;
+border-radius:12px;
+max-width:600px;
+width:90%;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2rem;
+}
+
+nav ul{
+display:none;
+}
+
+.share-container{
+flex-direction:column;
+}
+
+.share-btn{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Minnesota <span>Children's Zone</span>
+</div>
+
+<ul>
+<li>#aboutAbout</a></li>
+<li>#programsPrograms</a></li>
+<li>#impactImpact</a></li>
+<li>#volunteerVolunteer</a></li>
+<li><donateDonate</a></li>
+<li><a href="#contact">Contact/ul>
+
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+Empowering Children. Inspiring Teens. Strengthening Communities.
+</h1>
+
+<p>
+Minnesota Children's Zone helps students succeed in school,
+develop leadership skills, prepare for college and careers,
+and build brighter futures through mentorship and community support.
+</p>
+
+<a href="#donate" class="btn btn-primary">rograms</a>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2 class="section-title">About Minnesota Children's Zone</h2>
+
+<p style="text-align:center;max-width:900px;margin:auto;">
+Minnesota Children's Zone is dedicated to providing youth,
+families, schools, and communities with educational support,
+leadership development opportunities, mentoring services,
+family engagement programs, and pathways to lifelong success.
+</p>
+
+</div>
+
+</section>
+
+<section id="programs">
+
+<div class="container">
+
+<h2 class="section-title">Programs</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>School Success</h3>
+<p>Tutoring, literacy support, homework assistance, and STEM enrichment programs.</p>
+</div>
+
+<div class="card">
+<h3>Teen Leadership Academy</h3>
+<p>Leadership development, entrepreneurship, civic engagement, and workforce readiness.</p>
+</div>
+
+<div class="card">
+<h3>Mentoring</h3>
+<p>One-on-one and group mentoring that builds confidence and positive relationships.</p>
+</div>
+
+<div class="card">
+<h3>College Readiness</h3>
+<p>Scholarship support, application assistance, SAT preparation, and college planning.</p>
+</div>
+
+<div class="card">
+<h3>Career Development</h3>
+<p>Internships, career exploration, networking opportunities, and job readiness skills.</p>
+</div>
+
+<div class="card">
+<h3>Family Engagement</h3>
+<p>Parent workshops, resource navigation, and community-building initiatives.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="impact" class="impact">
+
+<div class="container">
+
+<h2 class="section-title" style="color:white;">Our Impact</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>500+</h2>
+<p>Youth Served Annually</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>Volunteer Mentors</p>
+</div>
+
+<div class="stat">
+<h2>20+</h2>
+<p>Community Partners</p>
+</div>
+
+<div class="stat">
+<h2>95%</h2>
+<p>Participant Satisfaction</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="volunteer">
+
+<div class="container">
+
+<h2 class="section-title">Become a Volunteer</h2>
+
+<div class="form-box">
+
+<form>
+
+<div class="form-group">
+<input type="text" placeholder="Full Name">
+</div>
+
+<div class="form-group">
+<input type="email" placeholder="Email Address">
+</div>
+
+<div class="form-group">
+<select>
+<option>Mentor</option>
+<option>Tutor</option>
+<option>Event Volunteer</option>
+<option>Career Coach</option>
+</select>
+</div>
+
+<button class="btn btn-primary">
+Apply to Volunteer
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="donate">
+
+<div class="container">
+
+<h2 class="section-title">
+Support Minnesota Youth
+</h2>
+
+<div class="form-box">
+
+<form id="donationForm">
+
+<div class="donation-levels">
+<button type="button" class="amount-btn">$25</button>
+<button type="button" class="amount-btn">$50</button>
+<button type="button" class="amount-btn">$100</button>
+<button type="button" class="amount-btn">$250</button>
+<button type="button" class="amount-btn">$500</button>
+</div>
+
+<div class="form-group">
+<input type="number" placeholder="Custom Donation Amount">
+</div>
+
+<div class="form-group">
+<select>
+<option>One-Time Donation</option>
+<option>Monthly Donation</option>
+<option>Quarterly Donation</option>
+<option>Annual Donation</option>
+</select>
+</div>
+
+<div class="form-group">
+<input type="text" placeholder="Full Name">
+</div>
+
+<div class="form-group">
+<input type="email" placeholder="Email">
+</div>
+
+<button type="submit" class="btn btn-primary">
+Donate Now
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Share Our Mission
+</h2>
+
+<div class="share-container">
+
+#
+📘 Share on Facebook
+</a>
+
+#
+💼 Share on LinkedIn
+</a>
+
+#
+🐦 Share on X
+</a>
+
+#
+✉ Share by Email
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+Contact Us
+</h2>
+
+<div class="form-box">
+
+<form>
+
+<div class="form-group">
+<input type="text" placeholder="Name">
+</div>
+
+<div class="form-group">
+<input type="email" placeholder="Email">
+</div>
+
+<div class="form-group">
+<textarea rows="5" placeholder="Message"></textarea>
+</div>
+
+<button class="btn btn-primary">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Minnesota Children's Zone</h3>
+
+<p>Building Brighter Futures for Minnesota Youth</p>
+
+<p>info@mncz.org | www.mncz.org</p>
+
+<p>© 2026 Minnesota Children's Zone</p>
+
+</footer>
+
+<div class="modal" id="thankYouModal">
+
+<div class="modal-content">
+
+<h2>🎉 Thank You!</h2>
+
+<p>
+Thank you for investing in Minnesota youth.
+Your contribution helps provide mentorship,
+education, leadership development, and opportunities
+for children and teens throughout Minnesota.
+</p>
+
+<br>
+
+<button class="btn btn-primary" onclick="closeModal()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById('donationForm').addEventListener('submit', function(e){
+e.preventDefault();
+document.getElementById('thankYouModal').style.display = 'flex';
+});
+
+function closeModal(){
+document.getElementById('thankYouModal').style.display = 'none';
+}
+
+</script>
+
+</body>
+</html>
